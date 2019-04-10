@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Play">
+
+    <Button
+        android:id="@+id/btn_primavera_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="154dp"
+        android:layout_marginEnd="11dp"
+        android:text="Primavera"
+        app:layout_constraintEnd_toStartOf="@+id/btn_verano_play"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_verano_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="27dp"
+        android:text="Verano"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_primavera_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_primavera_play" />
+
+    <Button
+        android:id="@+id/btn_invierno_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Invierno"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_otono_play"
+        app:layout_constraintStart_toStartOf="@+id/btn_primavera_play" />
+
+    <Button
+        android:id="@+id/btn_otono_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:text="Otoño"
+        app:layout_constraintStart_toEndOf="@+id/btn_invierno_play"
+        app:layout_constraintTop_toBottomOf="@+id/btn_verano_play" />
+</android.support.constraint.ConstraintLayout>
