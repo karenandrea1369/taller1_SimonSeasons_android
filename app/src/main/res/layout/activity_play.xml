@@ -10,39 +10,41 @@
         android:id="@+id/btn_primavera_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="154dp"
-        android:layout_marginEnd="11dp"
         android:text="Primavera"
-        app:layout_constraintEnd_toStartOf="@+id/btn_verano_play"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="154dp" />
 
     <Button
         android:id="@+id/btn_verano_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="27dp"
         android:text="Verano"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_primavera_play"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_primavera_play" />
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="154dp" />
 
     <Button
         android:id="@+id/btn_invierno_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Invierno"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_otono_play"
-        app:layout_constraintStart_toStartOf="@+id/btn_primavera_play" />
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="232dp" />
 
     <Button
         android:id="@+id/btn_otono_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="30dp"
         android:text="Otoño"
-        app:layout_constraintStart_toEndOf="@+id/btn_invierno_play"
-        app:layout_constraintTop_toBottomOf="@+id/btn_verano_play" />
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="232dp" />
+
+    <TextView
+        android:id="@+id/tv_tiempo_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="534dp" />
 </android.support.constraint.ConstraintLayout>

@@ -40,10 +40,10 @@ public class Comunicacion2 extends Observable implements Runnable {
             try {
             if(!conectado){
                 Log.e(">>>>", "Enviandoo peticion");
-                Log.e(">>>>", "IP" + InetAddress.getByName("192.168.43.149") );
+                //Log.e(">>>>", "IP" + InetAddress.getByName("192.168.1.13") );
 
                 Log.e(">>>>", "Enviando request");
-                s = new Socket(InetAddress.getByName("172.30.182.202"),5000);//esto es lo que el usuario debe escribir
+                s = new Socket(InetAddress.getByName("192.168.1.13"),5000);//esto es lo que el usuario debe escribir
                 Log.e(">>>>", "Voy a enviar");
 
                 entrada = new DataInputStream(s.getInputStream());
@@ -74,13 +74,13 @@ public class Comunicacion2 extends Observable implements Runnable {
         clearChanged();
     }
 
-    public void enviar(final int id) {
+    public void enviar(final String id) {
         if (s != null & s.isConnected() && salida != null) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        salida.writeInt(id);
+                        salida.writeUTF(id);
                         Log.e(">>>>>>>>>", "mensaje enviado");
                     } catch (IOException e) {
                         e.printStackTrace();

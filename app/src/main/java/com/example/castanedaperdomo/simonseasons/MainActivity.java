@@ -28,26 +28,32 @@ public class MainActivity extends AppCompatActivity implements Observer {
         com = Comunicacion2.getRef();
         com.addObserver(this);
 
- play.setOnClickListener(new View.OnClickListener() {
+        //1--Home 2--Play 3--GameOver 4--Help 5--BestScore
+
+        play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Play.class);
+                com.enviar("P:2");
                 startActivity(i);
+
             }
         });
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Instrucciones.class);
-                startActivity(i);
+                Intent e = new Intent(MainActivity.this, Instrucciones.class);
+                com.enviar("P:4");
+                startActivity(e);
             }
         });
 
         bestScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, BestScore.class);
-                startActivity(i);
+                Intent a = new Intent(MainActivity.this, BestScore.class);
+                com.enviar("P:5");
+                startActivity(a);
             }
         });
     }
@@ -55,12 +61,12 @@ public class MainActivity extends AppCompatActivity implements Observer {
     @Override
     public void update(Observable observable, Object o) {
         final String mensaje = (String)o;
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_SHORT).show();
-            }
-        });
+//        runOnUiThread(new Runnable() {
+//            @Override
+//            public void run() {
+//                //Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
     }
 }
