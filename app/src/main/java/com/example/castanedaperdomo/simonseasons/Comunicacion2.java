@@ -43,7 +43,7 @@ public class Comunicacion2 extends Observable implements Runnable {
                 //Log.e(">>>>", "IP" + InetAddress.getByName("192.168.1.13") );
 
                 Log.e(">>>>", "Enviando request");
-                s = new Socket(InetAddress.getByName("192.168.1.13"),5000);//esto es lo que el usuario debe escribir
+                s = new Socket(InetAddress.getByName("192.168.0.24"),5000);//esto es lo que el usuario debe escribir
                 Log.e(">>>>", "Voy a enviar");
 
                 entrada = new DataInputStream(s.getInputStream());

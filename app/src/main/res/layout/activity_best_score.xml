@@ -6,25 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".BestScore">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bestscorebien" />
+
     <Button
         android:id="@+id/btn_home_bestscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="46dp"
+        android:layout_marginStart="30dp"
+        android:background="@android:color/transparent"
         android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_play_bestscore"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_play_bestscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="47dp"
+        android:layout_marginEnd="38dp"
+        android:background="@android:color/transparent"
         android:text="Play"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_bestScore_bestScore"
+        android:layout_width="0dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="273dp"
+        android:layout_marginEnd="60dp"
+        android:text=" "
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_home_bestscore" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

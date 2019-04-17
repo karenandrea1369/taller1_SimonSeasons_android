@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.Observable;
@@ -13,7 +14,8 @@ import java.util.Observer;
 public class MainActivity extends AppCompatActivity implements Observer {
 
     private Comunicacion2 com;
-    private Button play,help,bestScore;
+    private Button help,bestScore;
+    private ImageButton play;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

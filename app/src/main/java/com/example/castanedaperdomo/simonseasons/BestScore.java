@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -13,6 +15,7 @@ public class BestScore extends AppCompatActivity implements Observer {
 
     private Button play,home;
     private Comunicacion2 com;
+    private TextView bestScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,9 @@ public class BestScore extends AppCompatActivity implements Observer {
 
         play = findViewById(R.id.btn_play_bestscore);
         home = findViewById(R.id.btn_home_bestscore);
+        bestScore = findViewById(R.id.tv_bestScore_bestScore);
+
+        com.enviar("getMP");
 
         //1--Home 2--Play 3--GameOver 4--Help 5--BestScore
 
@@ -47,6 +53,20 @@ public class BestScore extends AppCompatActivity implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
+        final String mensaje = (String)arg;
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (mensaje.contains("MP:")){
+                        String [] partido = mensaje.split(":");
+                        bestScore.setText("Best Score:"+partido[1]);
+                    }
 
+                    if (mensaje.equals("sin puntajes")){
+                        bestScore.setText("No scores yet. Play to save a score.");
+                    }
+
+                }
+            });
     }
 }

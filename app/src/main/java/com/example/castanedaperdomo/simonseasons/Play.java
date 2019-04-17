@@ -1,10 +1,12 @@
 package com.example.castanedaperdomo.simonseasons;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Observable;
@@ -16,6 +18,7 @@ public class Play extends AppCompatActivity implements Observer {
     private TextView tiempo;
     private Comunicacion2 com;
     private boolean perder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +64,8 @@ public class Play extends AppCompatActivity implements Observer {
             }
         });
 
+       // getSupportActionBar().hide();
+
 
         if(perder==true){
 
@@ -85,17 +90,18 @@ public class Play extends AppCompatActivity implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         final String mensaje = (String)arg;
-         if(mensaje.contains("3")) {
-           perder = true;
 
+        if(mensaje.equalsIgnoreCase("pierde")) {
+            Intent i = new Intent(getApplicationContext(), GameOver.class);
+            startActivity(i);
         }
 
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if(mensaje.contains("3")) {
-                    Toast.makeText(getApplicationContext(), "Perdiste :c", Toast.LENGTH_SHORT).show();
-                }
+//                if(mensaje.contains("P:3")) {
+//                    Toast.makeText(getApplicationContext(), "Perdiste :c", Toast.LENGTH_SHORT).show();
+//                }
                 if (mensaje.contains("T:")){
                     String[] partido = mensaje.split(":");
                     tiempo.setText(partido[1]);
